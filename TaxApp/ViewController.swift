@@ -42,7 +42,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         //    costFieldに追加された数字をcostに代入
         cost = Double(costField.text!)!
-        //    税金の計算を行う(Double(tax)はどういう意味だろう)
+        //    税金の計算を行う
         addTaxCost = cost * Double(tax)
         print(addTaxCost)
         //    addTaxCostをString型に変更(小数点以下も削除している)
@@ -53,7 +53,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     
     @IBAction func addButton(_ sender: Any) {
-        // costsArray配列にcontentsOfってなんだろう…
         costsArray.append(contentsOf: [addTaxCost])
         print(costsArray)
         UserDefaults.standard.set(costsArray, forKey: "item")
